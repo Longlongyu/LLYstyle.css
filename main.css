@@ -1,0 +1,23 @@
+header {
+  text-align: center;
+}
+article {
+  display: flex;
+}
+
+section.LLY {
+  width: 15rem;
+  height: 10rem;
+  margin: 1rem;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+}
+section.LLY>h1 {
+  transition: .5s;
+}
+section.LLY:hover>h1 {
+  transform-origin: center;
+  transform: scale(1.1);
+}

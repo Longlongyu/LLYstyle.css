@@ -1,0 +1,80 @@
+/*  */
+.LLY.backcolor {
+  background: rgb(82, 197, 243);
+	transition: 1s cubic-bezier(.2,.1,.15,1.2);
+}
+.LLY.backcolor:hover {
+  background: rgb(235, 63, 63);
+}
+
+.LLY.color {
+  color: #e7663f;
+  background-image: -webkit-linear-gradient(75deg,#e7663f,#f1a438);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.LLY.right {
+  font-size: 220%;
+}
+.LLY.right::before {
+  content: '½';
+  margin-left: -.8rem;
+  color: #7fab14;
+  font-size: 200%;
+  line-height: 1;
+  position: relative;
+  top: .5rem;
+}
+
+.LLY.mangle {
+  background: #397de4;
+  position: relative;
+  overflow: hidden;
+}
+.LLY.mangle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -20px;
+  right: 0;
+  height: 20px;
+  width: calc(100% + 20px);
+  background-size: 20px 40px;
+  background-image: 
+  linear-gradient(45deg, transparent 34%, white 34%, white 66%, transparent 66%), 
+  linear-gradient(135deg, transparent 34%, white 34%, white 66%, transparent 66%);
+}
+.LLY.mangle:hover::after {
+  animation: .5s linear infinite mangle;
+}
+
+.LLY.mangle:hover>.LLY.boat {
+  animation: bubble .5s ease-in forwards,boat .5s linear .5s infinite;
+}
+@keyframes bubble {
+  0% {
+    left: 15rem;
+  }
+  100% {
+    left: 10px;
+  }
+}
+
+@keyframes boat {
+  0%,100% {
+    top: -10px;
+  }
+  50% {
+    top: 0;
+  }
+}
+
+@keyframes mangle {
+  from {
+    left: -20px;
+  }
+  to {
+    left: 0;
+  }
+}
