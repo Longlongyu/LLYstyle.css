@@ -20,4 +20,5 @@ section.LLY>h1 {
 section.LLY:hover>h1 {
   transform-origin: center;
   transform: scale(1.1);
+  text-transform: uppercase;
 }
