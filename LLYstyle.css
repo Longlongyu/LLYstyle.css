@@ -59,6 +59,27 @@
     left: 0;
   }
 }
+/* 条纹背景效果 */
+.LLY.lines {
+  background: #67d676;
+  position: relative;
+  background-image: repeating-linear-gradient(60deg, 
+  transparent 0, transparent 30px, #e63f3f 30px, #e63f3f  60px);
+  background-size: 4.375rem 10rem;
+	background-repeat: repeat-x;
+	background-position: 10rem 10rem;
+}
+.LLY.lines:hover {
+  animation: lines .2s ease-in forwards;
+}
+@keyframes lines {
+  from {
+    background-position: 10rem 10rem;
+  }
+  to {
+    background-position: 50%;
+  }
+}
 .LLY.mangle:hover>.LLY.boat {
   animation: bubble .5s ease-in forwards,boat .5s linear .5s infinite;
 }
@@ -328,4 +349,59 @@
 }
 .LLY.backcolor:hover>.LLY.cat {
   animation: probe .2s ease-in forwards;
+}
+
+/* 团子 */
+.LLY.dumpling {
+  position: relative;
+  height: 6.5rem;
+  left: 17.5rem;
+  top: 11.5rem;
+  transform: rotate(-20deg);
+}
+.LLY.dumpling>.dumpling-head {
+  position: relative;
+  height: 12rem;
+  width: 15rem;
+  border-radius: 50%;
+  background: white;
+  transform: rotate(-10deg);
+}
+.LLY.dumpling>.dumpling-head>.dumpling-eye {
+  position: absolute;
+  top: 2rem;
+  left: 4rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background: #231d2b;
+  animation: flash .5s linear infinite;
+}
+.LLY.dumpling>.dumpling-head>.dumpling-eye.right {
+  top: 2.4rem;
+  left: 10rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  animation: flash .5s linear .25s infinite;
+}
+.LLY.lines:hover>.LLY.dumpling {
+  animation: dumpling .35s ease-in forwards;
+}
+@keyframes flash {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(.8);
+  }
+}
+@keyframes dumpling {
+  from {
+    left: 17.5rem;
+    top: 11.5rem;
+  }
+  to {
+    left: 1rem;
+    top: -.5rem;
+  }
 }
